@@ -237,9 +237,13 @@ def eval_fusion(fused_dir: Path, ir_dir: Path, vi_dir: Path, name: str) -> dict:
 
 def write_csv(path: Path, rows: list[dict]):
     path.parent.mkdir(parents=True, exist_ok=True)
-    keys = list(rows[0].keys())
+    keys = []
+    for row in rows:
+        for k in row:
+            if k not in keys:
+                keys.append(k)
     with path.open("w", newline="") as f:
-        w = csv.DictWriter(f, fieldnames=keys)
+        w = csv.DictWriter(f, fieldnames=keys, extrasaction="ignore")
         w.writeheader()
         w.writerows(rows)
 
