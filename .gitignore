@@ -1,0 +1,25 @@
+# ========================================
+# 外部数据集（不纳入版本控制）
+# ========================================
+RoadScene/
+dataset/
+
+# ========================================
+# 本地安装包 / 环境缓存
+# ========================================
+*.tar.bz2
+*.whl
+
+# ========================================
+# UMF-CMGR 生成数据
+# ========================================
+UMF-CMGR/cache/
+UMF-CMGR/results_Road/
+UMF-CMGR/visdom/
+UMF-CMGR/CPSTN/datasets/rgb2ir/
+UMF-CMGR/CPSTN/results/
+UMF-CMGR/CPSTN/checkpoints/
+UMF-CMGR/.idea/
+UMF-CMGR/**/__pycache__/
+UMF-CMGR/**/*.pyc
+UMF-CMGR/**/*.log
